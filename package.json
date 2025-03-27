@@ -10,11 +10,10 @@
     "url": "https://github.com/reshadhstu"
   },
   "samples": [
-        {
-            "displayName": "Custom Window Layouts",
-            "description": "This samples demonstrate various custom window layouts for the Unity Editor.",
-            "path": "Samples~/Custom_Layouts"
-        }
+    {
+      "displayName": "Custom Window Layouts",
+      "description": "This sample demonstrates various custom window layouts for the Unity Editor.",
+      "path": "Samples~/Custom_Layouts"
+    }
   ]
 }
-
