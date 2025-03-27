@@ -8,7 +8,7 @@ namespace CoreToolkit.Editor.Helpers
 {
     public class AssetCleaner : EditorWindow
     {
-        [MenuItem("Tools/Asset Cleaner")]
+        [MenuItem("Tools/CoreToolkit/Asset Cleaner")]
         public static void ShowWindow()
         {
             GetWindow(typeof(AssetCleaner));

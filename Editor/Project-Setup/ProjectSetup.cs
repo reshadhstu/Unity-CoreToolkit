@@ -16,7 +16,7 @@ namespace CoreToolkit.Editor.Project_Setup
     public static class ProjectSetup
     {
         // Main Setup: Run all steps in order
-        [MenuItem("Tools/Project Setup/First Time Setup (NEW)", false, 21)]
+        [MenuItem("Tools/CoreToolkit/Project Setup/First Time Setup (NEW)", false, 21)]
         public static void FirstTimeSetup()
         {
             CreateFolders();
@@ -27,7 +27,7 @@ namespace CoreToolkit.Editor.Project_Setup
         }
 
         // 1. Create Folders
-        [MenuItem("Tools/Project Setup/Create Folders", false, 22)]
+        [MenuItem("Tools/CoreToolkit/Project Setup/Create Folders", false, 22)]
         public static void CreateFolders()
         {
             Folders.Create("_Project", "Animations", "Animators", "Art", "Audios",
@@ -50,7 +50,7 @@ namespace CoreToolkit.Editor.Project_Setup
         }
 
         // 2. Import TextMesh Pro Essentials
-        //[MenuItem("Tools/Project Setup/Import TMP Text", false, 23)]
+        //[MenuItem("Tools/CoreToolkit/Project Setup/Import TMP Text", false, 23)]
         private static void ImportTMP_Text()
         {
             // Import TextMesh Pro Essential Resources
@@ -60,7 +60,7 @@ namespace CoreToolkit.Editor.Project_Setup
         }
 
         // 3. Install Packages via Package Manager (e.g. UniTask)
-        [MenuItem("Tools/Project Setup/Install Packages", false, 24)]
+        [MenuItem("Tools/CoreToolkit/Project Setup/Install Packages", false, 24)]
         public static void InstallPackages()
         {
             Packages.InstallPackages(new[]
@@ -75,7 +75,7 @@ namespace CoreToolkit.Editor.Project_Setup
         }
 
         // 4. Import Essential Assets from the Asset Store
-        [MenuItem("Tools/Project Setup/Import Essential Assets From Asset Store", false, 25)]
+        [MenuItem("Tools/CoreToolkit/Project Setup/Import Essential Assets From Asset Store", false, 25)]
         public static async void ImportEssentials()
         {
             // IMPORTANT: Use Asset Names as displayed in the Unity Package Manager
@@ -99,7 +99,7 @@ namespace CoreToolkit.Editor.Project_Setup
         }
 
         // 5. Import Local Packages
-        [MenuItem("Tools/Project Setup/Import Local Packages", false, 26)]
+        [MenuItem("Tools/CoreToolkit/Project Setup/Import Local Packages", false, 26)]
         private static void ImportLocalPackages()
         {
             // Adjust these paths as needed
@@ -108,7 +108,7 @@ namespace CoreToolkit.Editor.Project_Setup
         }
 
         // 6. Update project settings (e.g., Company Name)
-        [MenuItem("Tools/Project Setup/Update Project Settings", false, 27)]
+        [MenuItem("Tools/CoreToolkit/Project Setup/Update Project Settings", false, 27)]
         private static void UpdateProjectSettings()
         {
             string newCompanyName = "Alienide Interactive";

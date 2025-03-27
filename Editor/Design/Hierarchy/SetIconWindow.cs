@@ -7,8 +7,8 @@ namespace CoreToolkit.Editor.Design.Hierarchy
 {
     public class SetIconWindow : EditorWindow
     {
-        private const string MenuPathToAddIcon = "Assets/Tools/Script Icon/Set Script Icon";
-        private const string MenuPathToRemoveIcon = "Assets/Tools/Script Icon/Remove Script Icon";
+        private const string MenuPathToAddIcon = "Assets/CoreToolkit/Script Icon/Set Script Icon";
+        private const string MenuPathToRemoveIcon = "Assets/CoreToolkit/Script Icon/Remove Script Icon";
         
         private List<Texture2D> _icons;
         private int _selectedIcon;

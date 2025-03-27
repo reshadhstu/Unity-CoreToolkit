@@ -29,14 +29,14 @@ namespace CoreToolkit.Editor.Helpers
         // -------------------------------------------------------------------------
         //  Menu Items: On / Off
         // -------------------------------------------------------------------------
-        [MenuItem("Tools/PlayModeChanges/Transform/On", false, 41)]
+        [MenuItem("Tools/CoreToolkit/PlayModeChanges/Transform/On", false, 41)]
         private static void TurnOnPlayModeChanges()
         {
             s_isEnabled = true;
             EditorPrefs.SetBool("PersistentPlayModeChanges_Enabled", true);
         }
 
-        [MenuItem("Tools/PlayModeChanges/Transform/On", true, 42)]
+        [MenuItem("Tools/CoreToolkit/PlayModeChanges/Transform/On", true, 42)]
         private static bool ValidateTurnOnPlayModeChanges()
         {
             // Show a checkmark if currently enabled
@@ -45,14 +45,14 @@ namespace CoreToolkit.Editor.Helpers
             return !s_isEnabled;
         }
 
-        [MenuItem("Tools/PlayModeChanges/Transform/Off", false, 43)]
+        [MenuItem("Tools/CoreToolkit/PlayModeChanges/Transform/Off", false, 43)]
         private static void TurnOffPlayModeChanges()
         {
             s_isEnabled = false;
             EditorPrefs.SetBool("PersistentPlayModeChanges_Enabled", false);
         }
 
-        [MenuItem("Tools/PlayModeChanges/Transform/Off", true, 44)]
+        [MenuItem("Tools/CoreToolkit/PlayModeChanges/Transform/Off", true, 44)]
         private static bool ValidateTurnOffPlayModeChanges()
         {
             // Show a checkmark if currently disabled

@@ -19,8 +19,8 @@ namespace CoreToolkit.Editor.SceneBootstrapper
         private const string k_ShouldLoadBootstrap = "LoadBootstrapScene";
 
         // These appear as menu names
-        private const string k_LoadBootstrapMenu = "Tools/SceneBootstrapper Config/Load Bootstrap Scene On Play";
-        private const string k_DontLoadBootstrapMenu = "Tools/SceneBootstrapper Config/Don't Load Bootstrap Scene On Play";
+        private const string k_LoadBootstrapMenu = "Tools/CoreToolkit/SceneBootstrapper Config/Load Bootstrap Scene On Play";
+        private const string k_DontLoadBootstrapMenu = "Tools/CoreToolkit/SceneBootstrapper Config/Don't Load Bootstrap Scene On Play";
 
         // This gets the bootstrap scene, which must be first scene in Build Settings
         private static string BootstrapScene => EditorBuildSettings.scenes[0].path;

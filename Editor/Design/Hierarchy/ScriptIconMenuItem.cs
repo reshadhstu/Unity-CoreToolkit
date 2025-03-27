@@ -7,7 +7,7 @@ namespace CoreToolkit.Editor.Design.Hierarchy
     {
         private const string Label = "ScriptIcon";
         
-        [MenuItem("Tools/Script Icon Labels/Assign Script Icon Label")]
+        [MenuItem("Tools/CoreToolkit/Script Icon Labels/Assign Script Icon Label")]
         public static void AssignScriptIconMenuItem()
         {
             Object[] objects = Selection.objects;
@@ -26,7 +26,7 @@ namespace CoreToolkit.Editor.Design.Hierarchy
             }
         }
         
-        [MenuItem("Tools/Script Icon Labels/Remove Script Icon Label")]
+        [MenuItem("Tools/CoreToolkit/Script Icon Labels/Remove Script Icon Label")]
         public static void RemoveScriptIconMenuItem()
         {
             Object[] objects = Selection.objects;
@@ -41,7 +41,7 @@ namespace CoreToolkit.Editor.Design.Hierarchy
             }
         }
         
-        [MenuItem("Tools/Script Icon Labels/Find the Script Icons")]
+        [MenuItem("Tools/CoreToolkit/Script Icon Labels/Find the Script Icons")]
         public static void FindScriptIconMenuItem()
         {
             string[] assetGUIDs = AssetDatabase.FindAssets($"t:texture2d l:{Label}");

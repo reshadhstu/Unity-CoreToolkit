@@ -13,7 +13,7 @@ namespace CoreToolkit.Editor.Helpers.Memory_Profiling
     {
         private MemorySnapshotter _snapshotter;
 
-        [MenuItem("Tools/MemoryProfiler/TakeMemorySnapShot")]
+        [MenuItem("Tools/CoreToolkit/MemoryProfiler/TakeMemorySnapShot")]
         public static void ShowWindow()
         {
             // Opens the window as a dockable editor panel

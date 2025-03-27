@@ -24,7 +24,7 @@ namespace CoreToolkit.Editor.GUIDrawer
             rectTransform.pivot = new Vector2(0.5f, 0.5f);
         }
 
-        [MenuItem("Tools/Automatic UI Anchoring/Anchor Selected UI Objects _F1", priority = 4)]
+        [MenuItem("Tools/CoreToolkit/Automatic UI Anchoring/Anchor Selected UI Objects _F1", priority = 4)]
         private static void AnchorSelectedUIObjects()
         {
             for (int i = 0; i < Selection.gameObjects.Length; i++)

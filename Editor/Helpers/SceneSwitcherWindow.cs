@@ -9,7 +9,7 @@ namespace CoreToolkit.Editor.Helpers
 {
     public class SceneSwitcherWindow : EditorWindow, IHasCustomMenu
     {
-        [MenuItem("Tools/SceneSwitcher")]
+        [MenuItem("Tools/CoreToolkit/SceneSwitcher")]
         private static void OpenWindow()
         {
             var window = GetWindow<SceneSwitcherWindow>(false, "Scenes", true);
