@@ -4,7 +4,6 @@
   "displayName": "CoreToolkit",
   "description": "A set of core scripts, icons, and editor tools for Unity.",
   "unity": "2022.1",
-  "documentationUrl": "Documentation~/DOCUMENTATION.md",
   "author": {
     "name": "Reshad",
     "email": "reshad.hstu@gmail.com",
