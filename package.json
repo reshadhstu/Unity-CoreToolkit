@@ -1,0 +1,17 @@
+{
+  "name": "com.reshad.coretoolkit",
+  "version": "1.0.0",
+  "displayName": "Unity CoreToolkit",
+  "description": "A set of core scripts, icons, and editor tools for Unity.",
+  "unity": "2022.1",
+  "dependencies": {
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.unity.textmeshpro": "2.1.0"
+ },
+  "author": {
+    "name": "Reshad",
+    "email": "reshad.hstu@gmail.com",
+    "url": "https://github.com/reshadhstu"
+  }
+}
+
