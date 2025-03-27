@@ -7,15 +7,6 @@ namespace CoreToolkit.Editor.Design.Hierarchy
 {
     public class SetIconWindow : EditorWindow
     {
-        // Use a defined (e.g., CORE_TOOLKIT_UPM) to decide the menu path.
-// #if CORE_TOOLKIT_UPM
-//         private const string MenuPathToAddIcon = "Tools/Script Icon/Set Script Icon";
-//         private const string MenuPathToRemoveIcon = "Tools/Script Icon/Remove Script Icon";
-// #else
-//         private const string MenuPathToAddIcon = "Assets/Tools/Script Icon/Set Script Icon";
-//         private const string MenuPathToRemoveIcon = "Assets/Tools/Script Icon/Remove Script Icon";
-// #endif
-        
         private const string MenuPathToAddIcon = "Assets/Tools/Script Icon/Set Script Icon";
         private const string MenuPathToRemoveIcon = "Assets/Tools/Script Icon/Remove Script Icon";
         

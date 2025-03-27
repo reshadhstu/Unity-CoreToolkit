@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using TMPro.EditorUtilities;
+//using TMPro.EditorUtilities;
 using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
@@ -20,7 +20,6 @@ namespace CoreToolkit.Editor.Project_Setup
         public static void FirstTimeSetup()
         {
             CreateFolders();
-            ImportTMP_Text();
             InstallPackages();
             ImportEssentials();
             ImportLocalPackages();
@@ -51,13 +50,13 @@ namespace CoreToolkit.Editor.Project_Setup
         }
 
         // 2. Import TextMesh Pro Essentials
-        [MenuItem("Tools/Project Setup/Import TMP Text", false, 23)]
+        //[MenuItem("Tools/Project Setup/Import TMP Text", false, 23)]
         private static void ImportTMP_Text()
         {
             // Import TextMesh Pro Essential Resources
-            ImportPackage(TMP_EditorUtility.packageFullPath + "/Package Resources/TMP Essential Resources.unitypackage", false);
-            // Uncomment below to import Examples & Extras if needed
-            // ImportPackage(TMP_EditorUtility.packageFullPath + "/Package Resources/TMP Examples & Extras.unitypackage", false);
+            //ImportPackage(TMP_EditorUtility.packageFullPath + "/Package Resources/TMP Essential Resources.unitypackage", false);
+            // Import Examples & Extras if needed
+            //ImportPackage(TMP_EditorUtility.packageFullPath + "/Package Resources/TMP Examples & Extras.unitypackage", false);
         }
 
         // 3. Install Packages via Package Manager (e.g. UniTask)

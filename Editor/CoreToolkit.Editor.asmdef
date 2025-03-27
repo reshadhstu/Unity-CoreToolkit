@@ -2,8 +2,7 @@
     "name": "CoreToolkit.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:0cbd44bdee769d04fb3f2de324189b5e",
-        "GUID:6546d7765b4165b40850b3667f981c26"
+        "GUID:0cbd44bdee769d04fb3f2de324189b5e"
     ],
     "includePlatforms": [
         "Editor"

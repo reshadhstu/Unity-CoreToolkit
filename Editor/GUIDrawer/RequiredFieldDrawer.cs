@@ -8,7 +8,7 @@ namespace CoreToolkit.Editor.GUIDrawer
     public class RequiredFieldDrawer : PropertyDrawer 
     {
         
-#if CORE_TOOLKIT_UPM
+#if CORE_TOOLKIT_ICONS
         private const string RequiredIconPath = "Packages/com.reshad.coretoolkit/Editor/Icons/RequiredIcon/RequiredIcon.png";
 #else
         private const string RequiredIconPath = "Assets/CoreToolkit/Editor/Icons/RequiredIcon/RequiredIcon.png";
