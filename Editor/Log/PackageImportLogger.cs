@@ -22,7 +22,7 @@ namespace CoreToolkit.Editor.Log
         private static string GetPackageVersion()
         {
             // Construct the path to your package.json file
-            string packageJsonPath = Path.Combine("Packages", "com.reshad.coretoolkit", "package.json");
+            string packageJsonPath = Path.Combine("Packages", "CoreToolkit", "package.json");
 
             // Load the package.json file as a TextAsset
             TextAsset packageJsonAsset = AssetDatabase.LoadAssetAtPath<TextAsset>(packageJsonPath);
