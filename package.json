@@ -8,6 +8,13 @@
     "name": "Reshad",
     "email": "reshad.hstu@gmail.com",
     "url": "https://github.com/reshadhstu"
-  }
+  },
+  "samples": [
+        {
+            "displayName": "Custom Window Layouts",
+            "description": "This samples demonstrate various custom window layouts for the Unity Editor.",
+            "path": "Samples~/Custom_Layouts"
+        }
+  ]
 }
 
