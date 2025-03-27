@@ -1,7 +1,7 @@
 {
   "name": "com.reshad.coretoolkit",
   "version": "1.0.0",
-  "displayName": "Unity CoreToolkit",
+  "displayName": "CoreToolkit",
   "description": "A set of core scripts, icons, and editor tools for Unity.",
   "unity": "2022.1",
   "author": {

@@ -22,35 +22,38 @@ namespace CoreToolkit.Editor.Util
         [Obsolete("Obsolete")]
         private static void AddDefineSymbolsForAllBuildTargetGroups()
         {
+            bool anyUpdated = false; // Track if any changes were made
             foreach (BuildTargetGroup group in Enum.GetValues(typeof(BuildTargetGroup)))
             {
-                if (group == BuildTargetGroup.Unknown)
-                    continue;
+                // Skip invalid or obsolete groups
+                if (group == BuildTargetGroup.Unknown) continue;
+                var fieldInfo = typeof(BuildTargetGroup).GetField(group.ToString());
+                if (fieldInfo != null && Attribute.IsDefined(fieldInfo, typeof(ObsoleteAttribute))) continue;
 
                 try
                 {
-                    // Get current defines.
                     string defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(group);
                     List<string> defineList = defines.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    bool updated = false;
 
                     if (!defineList.Contains(DefineSymbolUpm))
                     {
                         defineList.Add(DefineSymbolUpm);
-                        Debug.Log($"Added {DefineSymbolUpm} to {group}");
-                        updated = true;
+                        anyUpdated = true; // Mark that we made a change
                     }
 
-                    if (updated)
-                    {
-                        string newDefines = string.Join(";", defineList.ToArray());
-                        PlayerSettings.SetScriptingDefineSymbolsForGroup(group, newDefines);
-                    }
+                    string newDefines = string.Join(";", defineList.ToArray());
+                    PlayerSettings.SetScriptingDefineSymbolsForGroup(group, newDefines);
                 }
                 catch (Exception ex)
                 {
                     Debug.LogWarning($"Could not update define symbols for group {group}: {ex.Message}");
                 }
+            }
+
+            // Log only once if any updates occurred
+            if (anyUpdated)
+            {
+                Debug.Log($"Added {DefineSymbolUpm} to all applicable build target groups.");
             }
         }
     }
