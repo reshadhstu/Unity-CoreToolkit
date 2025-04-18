@@ -11,8 +11,8 @@ namespace CoreToolkit.Editor.Helpers
     public static class PersistentPlayModeChanges
     {
         // Toggle flag, default = off
-        private static bool s_isEnabled = false;
-        private static bool s_isPlaying = false;
+        private static bool _isEnabled;
+        private static bool _isPlaying;
 
         // Keep track of modified objects
         private static Dictionary<int, TransformData> _modifiedObjects = new();
@@ -20,7 +20,7 @@ namespace CoreToolkit.Editor.Helpers
         static PersistentPlayModeChanges()
         {
             // Load user preference for whether the script is enabled
-            s_isEnabled = EditorPrefs.GetBool("PersistentPlayModeChanges_Enabled", false);
+            _isEnabled = EditorPrefs.GetBool("PersistentPlayModeChanges_Enabled", false);
 
             EditorApplication.playModeStateChanged += OnPlayModeChanged;
             EditorApplication.update += TrackLiveChanges;
@@ -29,36 +29,36 @@ namespace CoreToolkit.Editor.Helpers
         // -------------------------------------------------------------------------
         //  Menu Items: On / Off
         // -------------------------------------------------------------------------
-        [MenuItem("Tools/CoreToolkit/PlayModeChanges/Transform/On", false, 41)]
+        [MenuItem("Tools/CoreToolkit/SaveChangesOnPlayMode/Transform/On", false, 41)]
         private static void TurnOnPlayModeChanges()
         {
-            s_isEnabled = true;
+            _isEnabled = true;
             EditorPrefs.SetBool("PersistentPlayModeChanges_Enabled", true);
         }
 
-        [MenuItem("Tools/CoreToolkit/PlayModeChanges/Transform/On", true, 42)]
+        [MenuItem("Tools/CoreToolkit/SaveChangesOnPlayMode/Transform/On", true, 42)]
         private static bool ValidateTurnOnPlayModeChanges()
         {
             // Show a checkmark if currently enabled
-            Menu.SetChecked("Tools/PlayModeChanges/Transform/On", s_isEnabled);
+            Menu.SetChecked("Tools/SaveChangesOnPlayMode/Transform/On", _isEnabled);
             // Only enable this menu if currently off
-            return !s_isEnabled;
+            return !_isEnabled;
         }
 
-        [MenuItem("Tools/CoreToolkit/PlayModeChanges/Transform/Off", false, 43)]
+        [MenuItem("Tools/CoreToolkit/SaveChangesOnPlayMode/Transform/Off", false, 43)]
         private static void TurnOffPlayModeChanges()
         {
-            s_isEnabled = false;
+            _isEnabled = false;
             EditorPrefs.SetBool("PersistentPlayModeChanges_Enabled", false);
         }
 
-        [MenuItem("Tools/CoreToolkit/PlayModeChanges/Transform/Off", true, 44)]
+        [MenuItem("Tools/CoreToolkit/SaveChangesOnPlayMode/Transform/Off", true, 44)]
         private static bool ValidateTurnOffPlayModeChanges()
         {
             // Show a checkmark if currently disabled
-            Menu.SetChecked("Tools/PlayModeChanges/Transform/Off", !s_isEnabled);
+            Menu.SetChecked("Tools/SaveChangesOnPlayMode/Transform/Off", !_isEnabled);
             // Only enable this menu if currently on
-            return s_isEnabled;
+            return _isEnabled;
         }
 
         // -------------------------------------------------------------------------
@@ -66,17 +66,17 @@ namespace CoreToolkit.Editor.Helpers
         // -------------------------------------------------------------------------
         private static void OnPlayModeChanged(PlayModeStateChange state)
         {
-            // If script is disabled, do nothing
-            if (!s_isEnabled) return;
+            // If a script is disabled, do nothing
+            if (!_isEnabled) return;
 
             if (state == PlayModeStateChange.EnteredPlayMode)
             {
-                s_isPlaying = true;
+                _isPlaying = true;
                 _modifiedObjects.Clear();
             }
             else if (state == PlayModeStateChange.ExitingPlayMode)
             {
-                s_isPlaying = false;
+                _isPlaying = false;
                 SaveChangesToEditorPrefs();
 
                 // Use delayCall to mark the scene dirty after exiting play mode.
@@ -94,7 +94,7 @@ namespace CoreToolkit.Editor.Helpers
         private static void TrackLiveChanges()
         {
             // If script is disabled or not playing, do nothing
-            if (!s_isEnabled || !s_isPlaying) return;
+            if (!_isEnabled || !_isPlaying) return;
 
             // Use the new API: Object.FindObjectsByType with FindObjectsSortMode.None
             foreach (GameObject obj in Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None))

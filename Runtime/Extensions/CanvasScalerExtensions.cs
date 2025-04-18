@@ -6,7 +6,7 @@ namespace CoreToolkit.Runtime.Extensions
     public static class CanvasScalerExtensions
     {
         /// <summary>
-        /// Get scale factor which canvas scaler calculated when work in <see cref="CanvasScaler.ScaleMode.ScaleWithScreenSize"/> mode.
+        /// Get a scale factor which canvas scaler calculated when work in <see cref="CanvasScaler.ScaleMode.ScaleWithScreenSize"/> mode.
         /// </summary>
         /// <param name="scaler">The canvas scaler.</param>
         /// <returns>Calculated scale factor.</returns>

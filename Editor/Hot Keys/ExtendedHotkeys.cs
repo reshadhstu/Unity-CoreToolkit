@@ -6,27 +6,27 @@ namespace CoreToolkit.Editor.Hot_Keys
     public static class ExtendedHotkeys
     {
         // Priority 10 for the first item
-        [MenuItem("Tools/CoreToolkit/Select GameConfig %_T", false, 0)]
+        [MenuItem("Tools/CoreToolkit/Hot Keys/Select GameConfig %_T", false, 0)]
         static void SelectGameConfig()
         {
             Selection.activeObject = AssetDatabase.LoadMainAssetAtPath("Assets/_Project/Scripts/Runtime/SO/GameConfig.asset");
         }
 
         // Priority 21 for the second item (gap of 11 creates a separator)
-        [MenuItem("Tools/CoreToolkit/Select GameManager %_G", false, 1)]
+        [MenuItem("Tools/CoreToolkit/Hot Keys/Select GameManager %_G", false, 1)]
         static void SelectGameManager()
         {
             Selection.activeObject = AssetDatabase.LoadMainAssetAtPath("Assets/_Project/Scripts/Runtime/Managers/GameManager.cs");
         }
 
-        [MenuItem("Tools/CoreToolkit/Toggle Inspector Lock _F3", false, 2)]
+        [MenuItem("Tools/CoreToolkit/Hot Keys/Toggle Inspector Lock _F3", false, 2)]
         private static void ToggleEditorWindowLock()
         {
             ActiveEditorTracker.sharedTracker.isLocked = !ActiveEditorTracker.sharedTracker.isLocked;
             ActiveEditorTracker.sharedTracker.ForceRebuild();
         }
         
-        [MenuItem("Tools/CoreToolkit/Toggle Enter Play Mode Options _F4", false, 3)]
+        [MenuItem("Tools/CoreToolkit/Hot Keys/Toggle Enter Play Mode Options _F4", false, 3)]
         private static void ToggleEnterPlayModeOptions()
         {
             // Check the current state of the options.
