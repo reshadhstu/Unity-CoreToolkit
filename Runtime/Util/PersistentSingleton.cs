@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CoreToolkit.Runtime.Util 
 {
-    public sealed class PersistentSingleton<T> : MonoBehaviour where T : Component {
+    public abstract class PersistentSingleton<T> : MonoBehaviour where T : Component {
         
         public bool AutoUnparentOnAwake = true;
 
