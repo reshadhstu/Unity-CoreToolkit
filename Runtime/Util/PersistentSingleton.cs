@@ -2,62 +2,45 @@ using UnityEngine;
 
 namespace CoreToolkit.Runtime.Util 
 {
-    public abstract class PersistentSingleton<T> : MonoBehaviour where T : Component {
-        
-        public bool AutoUnparentOnAwake = true;
-
-        private static T instance;
-
-        private static bool HasInstance => instance != null;
-        
-        public static T TryGetInstance() => HasInstance ? instance : null;
-
+    public abstract class PersistentSingleton<T> : MonoBehaviour where T : Component 
+    {
+        public bool autoUnparentOnAwake = true;
+        private static T _instance;
         public static T Instance 
         {
             get 
             {
-                if (instance == null) 
+                if (_instance == null) 
                 {
-                    instance = FindAnyObjectByType<T>();
+                    _instance = FindAnyObjectByType<T>();
                     
-                    if (instance == null) 
+                    if (_instance == null) 
                     {
                         var go = new GameObject(typeof(T).Name + " Auto-Generated");
-                        instance = go.AddComponent<T>();
+                        _instance = go.AddComponent<T>();
                     }
                 }
-                return instance;
+                return _instance;
             }
         }
-
+        
         /// <summary>
         /// Make sure to call base.Awake() in override if you need awake.
         /// </summary>
         protected virtual void Awake() 
         {
-            InitializeSingleton();
-        }
-
-        private void InitializeSingleton() 
-        {
             if (!Application.isPlaying) return;
 
-            if (AutoUnparentOnAwake) 
-            {
-                transform.SetParent(null);
-            }
+            if (autoUnparentOnAwake) transform.SetParent(null);
 
-            if (instance == null) 
+            if (_instance == null) 
             {
-                instance = this as T;
+                _instance = this as T;
                 DontDestroyOnLoad(gameObject);
-            }
-            else 
+            } 
+            else if (_instance != this) 
             {
-                if (instance != this) 
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
         }
     }
