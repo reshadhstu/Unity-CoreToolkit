@@ -59,7 +59,7 @@ namespace CoreToolkit.Editor.Project_Setup
             _version = EditorPrefs.GetString("ProjectSetup_Version", "0.0.1");
             
             // Load packages
-            string defaultUnityPackages = "com.unity.memoryprofiler\ncom.unity.inputsystem";
+            string defaultUnityPackages = "com.unity.memoryprofiler\ncom.unity.inputsystem\ncom.unity.addressables\ncom.unity.2d.sprite";
             string savedUnityPackages = EditorPrefs.GetString("ProjectSetup_UnityPackages", defaultUnityPackages);
             _unityPackages = string.IsNullOrEmpty(savedUnityPackages) ? new List<string>() : savedUnityPackages.Split('\n').ToList();
 
@@ -69,7 +69,7 @@ namespace CoreToolkit.Editor.Project_Setup
             _gitPackages = string.IsNullOrEmpty(savedGitPackages) ? new List<string>() : savedGitPackages.Split('\n').ToList();
 
             // Load asset store assets
-            string defaultAssetStoreAssets = "Odin Inspector and Serializer\nOdin Validator\nDOTween Pro\nExtenject Dependency Injection IOC";
+            string defaultAssetStoreAssets = "Odin Inspector and Serializer\nOdin Validator\nDOTween Pro\nExtenject Dependency Injection IOC\nHot Reload | Edit Code Without Compiling\nEditor Console Pro\nBuild Report Tool";
             string savedAssetStoreAssets = EditorPrefs.GetString("ProjectSetup_AssetStoreAssets", defaultAssetStoreAssets);
             _assetStoreAssets = string.IsNullOrEmpty(savedAssetStoreAssets) ? new List<string>() : savedAssetStoreAssets.Split('\n').ToList();
         }
