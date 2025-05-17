@@ -10,11 +10,11 @@ namespace CoreToolkit.Runtime.Util
         {
             get 
             {
-                if (_instance == null) 
+                if (_instance is null) 
                 {
                     _instance = FindAnyObjectByType<T>();
                     
-                    if (_instance == null) 
+                    if (_instance is null) 
                     {
                         var go = new GameObject(typeof(T).Name + " Auto-Generated");
                         _instance = go.AddComponent<T>();
@@ -33,7 +33,7 @@ namespace CoreToolkit.Runtime.Util
 
             if (autoUnparentOnAwake) transform.SetParent(null);
 
-            if (_instance == null) 
+            if (_instance is null) 
             {
                 _instance = this as T;
                 DontDestroyOnLoad(gameObject);

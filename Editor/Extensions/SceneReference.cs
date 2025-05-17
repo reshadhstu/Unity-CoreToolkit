@@ -4,7 +4,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityObject = UnityEngine.Object;
 
-namespace CoreToolkit.Runtime.Extensions
+namespace CoreToolkit.Editor.Extensions
 {
     /// <summary>
     /// Wrapper for scene asset.
